@@ -1,0 +1,73 @@
+﻿modelo,codigo,problema,deteccoes,execucoes_avaliadas,frequencia,execucoes_no_codigo
+M1 – gemma-4-E4B-it-GGUF,C1-A,C1-A-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C1-A,C1-A-02,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C1-A,C1-A-03,1,5,0.2,5
+M1 – gemma-4-E4B-it-GGUF,C1-B,C1-B-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C1-B,C1-B-02,4,5,0.8,5
+M1 – gemma-4-E4B-it-GGUF,C2-A,C2-A-01,3,5,0.6,5
+M1 – gemma-4-E4B-it-GGUF,C2-A,C2-A-02,1,5,0.2,5
+M1 – gemma-4-E4B-it-GGUF,C2-B,C2-B-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C2-B,C2-B-02,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-A,C3-A-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-A,C3-A-02,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-A,C3-A-03,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-B,C3-B-01,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-B,C3-B-02,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C3-B,C3-B-03,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C4-A,C4-A-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C4-A,C4-A-02,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C4-B,C4-B-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C4-B,C4-B-02,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C5-A,C5-A-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C5-A,C5-A-02,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C5-A,C5-A-03,0,5,0.0,5
+M1 – gemma-4-E4B-it-GGUF,C5-B,C5-B-01,5,5,1.0,5
+M1 – gemma-4-E4B-it-GGUF,C5-B,C5-B-02,4,5,0.8,5
+M2 – Qwen3.6-27B-GGUF,C1-A,C1-A-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C1-A,C1-A-02,0,5,0.0,5
+M2 – Qwen3.6-27B-GGUF,C1-A,C1-A-03,1,5,0.2,5
+M2 – Qwen3.6-27B-GGUF,C1-B,C1-B-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C1-B,C1-B-02,4,5,0.8,5
+M2 – Qwen3.6-27B-GGUF,C2-A,C2-A-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C2-A,C2-A-02,1,5,0.2,5
+M2 – Qwen3.6-27B-GGUF,C2-B,C2-B-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C2-B,C2-B-02,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C3-A,C3-A-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C3-A,C3-A-02,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C3-A,C3-A-03,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C3-B,C3-B-01,0,5,0.0,5
+M2 – Qwen3.6-27B-GGUF,C3-B,C3-B-02,0,5,0.0,5
+M2 – Qwen3.6-27B-GGUF,C3-B,C3-B-03,3,5,0.6,5
+M2 – Qwen3.6-27B-GGUF,C4-A,C4-A-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C4-A,C4-A-02,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C4-B,C4-B-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C4-B,C4-B-02,2,5,0.4,5
+M2 – Qwen3.6-27B-GGUF,C5-A,C5-A-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C5-A,C5-A-02,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C5-A,C5-A-03,0,5,0.0,5
+M2 – Qwen3.6-27B-GGUF,C5-B,C5-B-01,5,5,1.0,5
+M2 – Qwen3.6-27B-GGUF,C5-B,C5-B-02,5,5,1.0,5
+M3 – GPT-5.6 Luna,C1-A,C1-A-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C1-A,C1-A-02,4,5,0.8,5
+M3 – GPT-5.6 Luna,C1-A,C1-A-03,2,5,0.4,5
+M3 – GPT-5.6 Luna,C1-B,C1-B-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C1-B,C1-B-02,5,5,1.0,5
+M3 – GPT-5.6 Luna,C2-A,C2-A-01,0,5,0.0,5
+M3 – GPT-5.6 Luna,C2-A,C2-A-02,4,5,0.8,5
+M3 – GPT-5.6 Luna,C2-B,C2-B-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C2-B,C2-B-02,5,5,1.0,5
+M3 – GPT-5.6 Luna,C3-A,C3-A-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C3-A,C3-A-02,5,5,1.0,5
+M3 – GPT-5.6 Luna,C3-A,C3-A-03,5,5,1.0,5
+M3 – GPT-5.6 Luna,C3-B,C3-B-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C3-B,C3-B-02,4,5,0.8,5
+M3 – GPT-5.6 Luna,C3-B,C3-B-03,5,5,1.0,5
+M3 – GPT-5.6 Luna,C4-A,C4-A-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C4-A,C4-A-02,3,5,0.6,5
+M3 – GPT-5.6 Luna,C4-B,C4-B-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C4-B,C4-B-02,2,5,0.4,5
+M3 – GPT-5.6 Luna,C5-A,C5-A-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C5-A,C5-A-02,5,5,1.0,5
+M3 – GPT-5.6 Luna,C5-A,C5-A-03,5,5,1.0,5
+M3 – GPT-5.6 Luna,C5-B,C5-B-01,5,5,1.0,5
+M3 – GPT-5.6 Luna,C5-B,C5-B-02,5,5,1.0,5

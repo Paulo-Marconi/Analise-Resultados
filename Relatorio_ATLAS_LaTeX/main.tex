@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{booktabs,pgfplots,hyperref}
+\pgfplotsset{compat=1.18}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+\title{\textbf{Análise dos resultados do experimento ATLAS}\\[0.4em]\large Detecção de problemas arquiteturais}
+\author{}
+\date{Outubro de 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Este relatório compara três modelos na identificação de problemas arquiteturais em dez códigos. Foram analisadas cinco repetições por código e modelo, totalizando 150 execuções. O GPT-5.6 Luna obteve F1 médio de 0,860, seguido pelo Qwen3.6-27B com 0,751 e pelo Gemma-4-E4B com 0,618. A comparação por código revela diferenças e empates; as conclusões se restringem à amostra avaliada.
+\end{abstract}
+
+\section{Objetivo e escopo}
+A análise compara a detecção dos problemas previamente catalogados. Não avalia a qualidade textual das explicações, recomendações, edições de código, acessibilidade da escrita ou efeito de RAG. Os resultados não representam uma avaliação geral dos modelos.
+
+\section{Dados e método}
+O conjunto contém dez códigos, dois por cenário, em cinco grupos: responsabilidades e coesão (C1), acoplamento concreto (C2), encapsulamento de regras e estado (C3), dificuldade de extensão (C4) e estado global ou dependências ocultas (C5). Há 24 problemas esperados no total. Cada código foi analisado por três modelos em cinco repetições, totalizando 150 execuções.
+
+Cada problema possui um identificador, como \texttt{C1-A-01}. Os IDs listados em "Problemas detectados" representam problemas previstos identificados corretamente. Cada ID único conta como verdadeiro positivo (VP); a quantidade de IDs deve corresponder à coluna VP. O total esperado por código é VP+FN.
+
+\[
+\mathrm{Precisão}=\frac{VP}{VP+FP},\qquad
+\mathrm{Revocação}=\frac{VP}{VP+FN},\qquad
+F_1=\frac{2VP}{2VP+FP+FN}.
+\]
+As contagens são somadas por repetição antes do cálculo das métricas, conforme o plano de avaliação. A tabela geral apresenta a média das cinco repetições completas; para F1, também é apresentado o desvio padrão amostral.
+
+\section{Resultados gerais}
+\begin{table}[ht]
+\centering
+\caption{Contagens acumuladas em 50 execuções e médias das métricas entre cinco repetições.}
+\begin{tabular}{lrrrrrr}
+\toprule
+Modelo & VP & FP & FN & Precisão & Revocação & $F_1$ médio $\pm$ DP\\
+\midrule
+M1 -- Gemma-4-E4B & 73 & 43 & 47 & 0,629 & 0,608 & 0,618 $\pm$ 0,031\\
+M2 -- Qwen3.6-27B & 86 & 23 & 34 & 0,790 & 0,717 & 0,751 $\pm$ 0,044\\
+M3 -- GPT-5.6 Luna & 104 & 18 & 16 & 0,854 & 0,867 & 0,860 $\pm$ 0,026\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+M3 teve o maior F1 e revocação médios, mais acertos e menos falsos positivos. M2 ficou em posição intermediária. M1 apresentou menor F1 e mais falsos positivos. O desvio padrão observado de F1 foi menor para M3 (0,026), seguido por M1 (0,031) e M2 (0,044). Com cinco repetições, essa comparação é descritiva.
+
+\section{Acertos por código}
+A Tabela \ref{tab:acertos} mostra os IDs corretamente identificados nas cinco repetições. O denominador é cinco vezes a quantidade de problemas esperados no código. Como o número de repetições é igual para todos, o total acumulado e a média de acertos por execução produzem a mesma liderança. Empates foram mantidos.
+
+\begin{table}[ht]
+\centering
+\caption{Acertos acumulados por código em cinco repetições}
+\label{tab:acertos}
+\scriptsize
+\begin{tabular}{lrrrrl}
+\toprule
+Código & Esperados & M1 & M2 & M3 & Líder(es)\\
+\midrule
+C1-A & 3 & 6/15 & 6/15 & 11/15 & M3\\
+C1-B & 2 & 9/10 & 9/10 & 10/10 & M3\\
+C2-A & 2 & 4/10 & 6/10 & 4/10 & M2\\
+C2-B & 2 & 10/10 & 10/10 & 10/10 & M1, M2, M3\\
+C3-A & 3 & 5/15 & 15/15 & 15/15 & M2, M3\\
+C3-B & 3 & 0/15 & 3/15 & 14/15 & M3\\
+C4-A & 2 & 10/10 & 10/10 & 8/10 & M1, M2\\
+C4-B & 2 & 10/10 & 7/10 & 7/10 & M1\\
+C5-A & 3 & 10/15 & 10/15 & 15/15 & M3\\
+C5-B & 2 & 9/10 & 10/10 & 10/10 & M2, M3\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ ybar,bar width=5pt,width=\textwidth,height=7cm,ymin=0,ymax=16,
+ ylabel={IDs corretos acumulados em cinco repetições},xlabel={Código},
+ symbolic x coords={C1-A,C1-B,C2-A,C2-B,C3-A,C3-B,C4-A,C4-B,C5-A,C5-B},
+ xtick=data,x tick label style={rotate=35,anchor=east,font=\small},
+ ymajorgrids=true,grid style={gray!25},enlarge x limits=0.06,
+ legend style={at={(0.5,1.03)},anchor=south,legend columns=3}]
+\addplot+[fill=blue!55,draw=blue!70!black] coordinates {(C1-A,6)(C1-B,9)(C2-A,4)(C2-B,10)(C3-A,5)(C3-B,0)(C4-A,10)(C4-B,10)(C5-A,10)(C5-B,9)};
+\addplot+[fill=orange!65,draw=orange!80!black] coordinates {(C1-A,6)(C1-B,9)(C2-A,6)(C2-B,10)(C3-A,15)(C3-B,3)(C4-A,10)(C4-B,7)(C5-A,10)(C5-B,10)};
+\addplot+[fill=green!55,draw=green!70!black] coordinates {(C1-A,11)(C1-B,10)(C2-A,4)(C2-B,10)(C3-A,15)(C3-B,14)(C4-A,8)(C4-B,7)(C5-A,15)(C5-B,10)};
+\legend{M1 -- Gemma,M2 -- Qwen,M3 -- GPT}
+\end{axis}
+\end{tikzpicture}
+\caption{Acertos por código. O máximo possível é 10 ou 15 conforme a quantidade de problemas esperados.}
+\end{figure}
+
+M3 liderou sozinho em C1-A, C1-B, C3-B e C5-A e empatou em C3-A e C5-B. M2 liderou C2-A; M1 liderou C4-B. C3-B apresentou a maior diferença: M1 identificou 0/15 problemas possíveis nas cinco repetições, M2 3/15 e M3 14/15.
+
+\section{Questões de pesquisa}
+\begin{description}
+\item[QP1 -- Eficácia geral.] F1 médio: M3 (0,860), M2 (0,751) e M1 (0,618), restrito a esta amostra.
+\item[QP2 -- Falsos positivos.] Foram 18 para M3, 23 para M2 e 43 para M1 nas 50 execuções de cada modelo.
+\item[QP3 -- Tipo de problema.] A liderança varia por código; a média geral não mostra sozinha essa variação e os empates.
+\item[QP4 -- Consistência.] O DP amostral de F1 foi 0,026 para M3, 0,031 para M1 e 0,044 para M2. Cinco repetições não bastam para inferir estabilidade ampla.
+\end{description}
+
+\section{Limitações e conclusão}
+A amostra possui dez códigos construídos, e todos contêm problemas previstos. A análise assume corretas as classificações humanas de VP, FP e FN. Não mede desempenho em códigos sem problemas, qualidade textual das explicações, recomendações, edições ou efeito de RAG. Não foram realizados testes inferenciais.
+
+Nos dados disponíveis, M3 teve o maior desempenho geral. Por código, M1 ou M2 igualaram ou superaram M3 em alguns casos. Para encontrar o modelo com mais acertos, contam-se os IDs corretos de cada código ou suas somas nas cinco repetições, mantendo os empates.
+
+\section*{Fontes}
+\begin{enumerate}
+\item \textit{ATLAS -- Plano de Avaliação}, inventário de códigos e problemas previstos.
+\item \textit{Execucoes\_organizadas\_M1\_M2\_M3\_v2.xlsx}, aba "Execuções".
+\end{enumerate}
+\end{document}

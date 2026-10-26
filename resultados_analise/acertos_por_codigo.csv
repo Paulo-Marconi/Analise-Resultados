@@ -1,0 +1,31 @@
+﻿modelo,codigo,acertos_total,acertos_medios,variacao_acertos,repeticoes_avaliadas,fp_total,fn_total,erros_esperados_por_execucao,acertos_possiveis_total,revocacao_agregada,lidera_codigo
+M1 – gemma-4-E4B-it-GGUF,C1-A,6,1.2,0.4472135954999579,5,6,9,3,15,0.4,False
+M1 – gemma-4-E4B-it-GGUF,C1-B,9,1.8,0.4472135954999579,5,5,1,2,10,0.9,False
+M1 – gemma-4-E4B-it-GGUF,C2-A,4,0.8,0.8366600265340756,5,4,6,2,10,0.4,False
+M1 – gemma-4-E4B-it-GGUF,C2-B,10,2.0,0.0,5,5,0,2,10,1.0,True
+M1 – gemma-4-E4B-it-GGUF,C3-A,5,1.0,0.0,5,4,10,3,15,0.3333333333333333,False
+M1 – gemma-4-E4B-it-GGUF,C3-B,0,0.0,0.0,5,10,15,3,15,0.0,False
+M1 – gemma-4-E4B-it-GGUF,C4-A,10,2.0,0.0,5,3,0,2,10,1.0,True
+M1 – gemma-4-E4B-it-GGUF,C4-B,10,2.0,0.0,5,6,0,2,10,1.0,True
+M1 – gemma-4-E4B-it-GGUF,C5-A,10,2.0,0.0,5,0,5,3,15,0.6666666666666666,False
+M1 – gemma-4-E4B-it-GGUF,C5-B,9,1.8,0.4472135954999579,5,0,1,2,10,0.9,False
+M2 – Qwen3.6-27B-GGUF,C1-A,6,1.2,0.4472135954999579,5,3,9,3,15,0.4,False
+M2 – Qwen3.6-27B-GGUF,C1-B,9,1.8,0.4472135954999579,5,2,1,2,10,0.9,False
+M2 – Qwen3.6-27B-GGUF,C2-A,6,1.2,0.4472135954999579,5,5,4,2,10,0.6,True
+M2 – Qwen3.6-27B-GGUF,C2-B,10,2.0,0.0,5,5,0,2,10,1.0,True
+M2 – Qwen3.6-27B-GGUF,C3-A,15,3.0,0.0,5,0,0,3,15,1.0,True
+M2 – Qwen3.6-27B-GGUF,C3-B,3,0.6,0.5477225575051661,5,6,12,3,15,0.2,False
+M2 – Qwen3.6-27B-GGUF,C4-A,10,2.0,0.0,5,0,0,2,10,1.0,True
+M2 – Qwen3.6-27B-GGUF,C4-B,7,1.4,0.5477225575051662,5,2,3,2,10,0.7,False
+M2 – Qwen3.6-27B-GGUF,C5-A,10,2.0,0.0,5,0,5,3,15,0.6666666666666666,False
+M2 – Qwen3.6-27B-GGUF,C5-B,10,2.0,0.0,5,0,0,2,10,1.0,True
+M3 – GPT-5.6 Luna,C1-A,11,2.2,0.8366600265340756,5,0,4,3,15,0.7333333333333333,True
+M3 – GPT-5.6 Luna,C1-B,10,2.0,0.0,5,1,0,2,10,1.0,True
+M3 – GPT-5.6 Luna,C2-A,4,0.8,0.4472135954999579,5,2,6,2,10,0.4,False
+M3 – GPT-5.6 Luna,C2-B,10,2.0,0.0,5,4,0,2,10,1.0,True
+M3 – GPT-5.6 Luna,C3-A,15,3.0,0.0,5,3,0,3,15,1.0,True
+M3 – GPT-5.6 Luna,C3-B,14,2.8,0.4472135954999579,5,5,1,3,15,0.9333333333333333,True
+M3 – GPT-5.6 Luna,C4-A,8,1.6,0.5477225575051662,5,2,2,2,10,0.8,False
+M3 – GPT-5.6 Luna,C4-B,7,1.4,0.5477225575051662,5,1,3,2,10,0.7,False
+M3 – GPT-5.6 Luna,C5-A,15,3.0,0.0,5,0,0,3,15,1.0,True
+M3 – GPT-5.6 Luna,C5-B,10,2.0,0.0,5,0,0,2,10,1.0,True
